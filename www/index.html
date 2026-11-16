@@ -1,0 +1,37 @@
+<!doctype html>
+<!-- =========================================================================
+     AMAZING NACIONALIDAD · index.html
+     Página principal. Carga estilos, configuración, contenido y lógica, y
+     registra el "service worker" para que funcione sin internet.
+     ========================================================================= -->
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Amazing Nacionalidad</title>
+  <meta name="description" content="Prepara el examen CCSE y el DELE A2 para la nacionalidad española, con español fácil y audio.">
+  <meta name="theme-color" content="#B3282D">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <!-- Sin Google Fonts a propósito (RGPD): se usan las letras del propio dispositivo. -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main id="app" aria-live="polite"></main>
+  <noscript>Esta app necesita JavaScript activado.</noscript>
+
+  <!-- El orden importa: primero la configuración y el contenido, al final la lógica -->
+  <script src="config.js"></script>
+  <script src="ccse.js"></script>
+  <script src="dele.js"></script>
+  <script src="extras.js"></script>
+  <script src="app.js"></script>
+  <script>
+    // Modo sin internet en navegador (en el APK no hace falta, pero no molesta)
+    if ("serviceWorker" in navigator && location.protocol.startsWith("http") && location.hostname !== "localhost") {
+      window.addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
+    }
+  </script>
+</body>
+</html>

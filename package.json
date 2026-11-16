@@ -1,0 +1,19 @@
+{
+  "name": "amazing-nacionalidad-apk",
+  "version": "0.1.0",
+  "private": true,
+  "description": "App Android de prueba de Amazing Nacionalidad (preparación CCSE y DELE A2), empaquetada con Capacitor",
+  "scripts": {
+    "preparar": "cap add android || true; cap sync android",
+    "iconos": "capacitor-assets generate --android --iconBackgroundColor '#B3282D' --splashBackgroundColor '#FBF6EE' --splashBackgroundColorDark '#1A1412'"
+  },
+  "dependencies": {
+    "@capacitor-community/text-to-speech": "4.0.1",
+    "@capacitor/android": "6.1.2",
+    "@capacitor/core": "6.1.2"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "3.0.5",
+    "@capacitor/cli": "6.1.2"
+  }
+}

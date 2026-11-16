@@ -1,0 +1,6 @@
+{
+  "appId": "es.amazingnacionalidad.app",
+  "appName": "Amazing Nacionalidad",
+  "webDir": "www",
+  "android": { "backgroundColor": "#FBF6EE" }
+}
